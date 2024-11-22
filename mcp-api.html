@@ -214,14 +214,12 @@
                                         <span class="tab" data-tab="php" data-group="languages">PHP</span>
                                     </div>
                                     <div class="code-content" id="curl" data-group="languages">
-<pre><code class="language-bash">
-<span class="command">curl</span> <span class="option">--location</span> <span class="string">'https://maxstore.co.il/api/send-sms'</span> \
+<pre><code class="language-bash"><span class="command">curl</span> <span class="option">--location</span> <span class="string">'https://maxstore.co.il/api/send-sms'</span> \
 <span class="option">--header</span> <span class="string">'Accept: application/json'</span> \
 <span class="option">--data-urlencode</span> <span class="string">'api_secret=pbahmifqnpjxd6h'</span> \
 <span class="option">--data-urlencode</span> <span class="string">'phonenumber=0525309310'</span> \
 <span class="option">--data-urlencode</span> <span class="string">'message=this is my test message'</span> \
-<span class="option">--data-urlencode</span> <span class="string">'from=test user'</span>
-</code></pre>
+<span class="option">--data-urlencode</span> <span class="string">'from=test user'</span></code></pre>
                                         <div class="copy-container">
                                             <span class="copy-icon"><img src="./assets/images/icons/copy-2.svg"
                                                     alt=""></span>
@@ -230,8 +228,7 @@
                                         </div>
                                     </div>
                                     <div class="code-content hidden" id="python" data-group="languages">
-<pre><code class="language-python">
-    <span class="keyword">import</span> <span class="variable">requests</span>
+<pre><code class="language-python"><span class="keyword">import</span> <span class="variable">requests</span>
     
     <span class="variable">url</span> = <span class="string">"https://maxstore.co.il/api/send-sms"</span>
     <span class="variable">payload</span> = {
@@ -249,8 +246,7 @@
         <span class="parameter">data</span>=<span class="variable">payload</span>, 
         <span class="parameter">headers</span>=<span class="variable">headers</span>
     )
-    <span class="function">print</span>(<span class="variable">response</span>.<span class="property">text</span>)
-    </code></pre>
+    <span class="function">print</span>(<span class="variable">response</span>.<span class="property">text</span>)</code></pre>
                                         <div class="copy-container">
                                             <span class="copy-icon"><img src="./assets/images/icons/copy-2.svg"
                                                     alt=""></span>
@@ -259,8 +255,7 @@
                                         </div>
                                     </div>
                                     <div class="code-content hidden" id="javascript" data-group="languages">
-<pre><code class="language-javascript">
-    <span class="keyword">const</span> <span class="variable">fetch</span> = <span class="function">require</span>(<span class="string">"node-fetch"</span>);
+<pre><code class="language-javascript"><span class="keyword">const</span> <span class="variable">fetch</span> = <span class="function">require</span>(<span class="string">"node-fetch"</span>);
     
     <span class="keyword">const</span> <span class="variable">url</span> = <span class="string">"https://maxstore.co.il/api/send-sms"</span>;
     <span class="keyword">const</span> <span class="variable">options</span> = {
@@ -277,8 +272,7 @@
     <span class="variable">fetch</span>(<span class="variable">url</span>, <span class="variable">options</span>)
         .<span class="method">then</span>(<span class="parameter">response</span> => <span class="parameter">response</span>.<span class="method">text</span>())
         .<span class="method">then</span>(<span class="parameter">console</span>.<span class="method">log</span>)
-        .<span class="method">catch</span>(<span class="parameter">console</span>.<span class="method">error</span>);
-</code></pre>
+        .<span class="method">catch</span>(<span class="parameter">console</span>.<span class="method">error</span>);</code></pre>
                                         <div class="copy-container">
                                             <span class="copy-icon"><img src="./assets/images/icons/copy-2.svg"
                                                     alt=""></span>
@@ -287,8 +281,7 @@
                                         </div>
                                     </div>
                                     <div class="code-content hidden" id="go" data-group="languages">
-<pre><code class="language-go">
-    <span class="keyword">package</span> <span class="variable">main</span>
+<pre><code class="language-go"><span class="keyword">package</span> <span class="variable">main</span>
     
     <span class="keyword">import</span> (
         <span class="string">"fmt"</span>
@@ -313,8 +306,7 @@
         }
         <span class="class-name">defer</span> <span class="variable">resp.Body.Close</span>()
         <span class="class-name">fmt.Println</span>(<span class="string">"Response Status:"</span>, <span class="variable">resp.Status</span>)
-    }
-</code></pre>
+    }</code></pre>
                                         <div class="copy-container">
                                             <span class="copy-icon"><img src="./assets/images/icons/copy-2.svg"
                                                     alt=""></span>
@@ -323,8 +315,7 @@
                                         </div>
                                     </div>
                                     <div class="code-content hidden" id="php" data-group="languages">
-<pre><code class="language-php">
-    <span class="tag">&lt;?php</span>
+<pre><code class="language-php"><span class="tag">&lt;?php</span>
     <span class="variable">$curl</span> = <span class="class-name">curl_init</span>();
     
     <span class="class-name">curl_setopt_array</span>(<span class="variable">$curl</span>, <span class="keyword">array</span>(
@@ -343,8 +334,7 @@
     <span class="variable">$response</span> = <span class="class-name">curl_exec</span>(<span class="variable">$curl</span>);
     <span class="class-name">curl_close</span>(<span class="variable">$curl</span>);
     <span class="class-name">echo</span> <span class="variable">$response</span>;
-    <span class="tag">?&gt;</span>
-</code></pre>
+    <span class="tag">?&gt;</span></code></pre>
                                         <div class="copy-container">
                                             <span class="copy-icon"><img src="./assets/images/icons/copy-2.svg"
                                                     alt="icon"></span>
@@ -360,9 +350,7 @@
                                         <span class="tab" data-tab="code400" data-group="responses">400</span>
                                     </div>
                                     <div class="code-content" id="code200" data-group="responses">
-<pre>
-<code>
-[
+<pre><code>[
     {
         <span class="keyword">"id"</span>: <span class="string">"&lt;string&gt;"</span>,
         <span class="keyword">"data"</span>: {
@@ -370,9 +358,7 @@
         },
         <span class="keyword">"event"</span>: <span class="string">"ADD"</span>
     }
-]
-</code>
-</pre>
+]</code></pre>
                                         <div class="copy-container">
                                             <span class="copy-icon"><img src="./assets/images/icons/copy-2.svg"
                                                     alt=""></span>
@@ -381,19 +367,15 @@
                                         </div>
                                     </div>
                                     <div class="code-content hidden" id="code400" data-group="responses">
-<pre>
-<code>
-[
-    {
+<pre><code>[
+{
         <span class="keyword">"id"</span>: <span class="string">"&lt;var&gt;"</span>,
         <span class="keyword">"data"</span>: {
             <span class="keyword">"memory"</span>: <span class="string">"&lt;var&gt;"</span>
         },
         <span class="keyword">"event"</span>: <span class="string">"Remove"</span>
     }
-]
-</code>
-</pre>
+]</code></pre>
                                         <div class="copy-container">
                                             <span class="copy-icon"><img src="./assets/images/icons/copy-2.svg"
                                                     alt=""></span>
