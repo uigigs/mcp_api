@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/api-style.css">
+</head>
+
+<body>
+    <div class="api-bg"></div>
+    <div class="api-bg2"></div>
+    <section class="api-header-section">
+        <div class="api-header api-content">
+            <button class="mobile-menu-btn">
+                <img src="./assets/images/icons/menu-bars.svg" alt="icon">
+            </button>
+            <div class="api-header-left api-left">
+                <div class="api-header-left-inner api-left-inner">
+                    <a href="#" class="logo"><img src="./assets/images/logo/logo.png" alt="img"></a>
+                </div>
+            </div>
+            <div class="api-header-right api-right">
+                <div class="api-hader-right-inner api-right-inner">
+                    <div class="header-search-box show-search-popup">
+                        <button><img src="./assets/images/icons/search.svg" alt="icon"></button>
+                        <input type="text" placeholder="Search or ask...">
+                        <span>Ctrl K</span>
+                    </div>
+                    <div class="header-btns">
+                        <a href="#" class="sign-up-btn">Sign Up</a>
+                        <a href="#" class="login-btn">Log in</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="mobile-menu">
+        <div class="mobile-menu-inner">
+            <button class="menu-close"><img src="./assets/images/icons/close.svg" alt="icon"></button>
+            <div class="sidemenu">
+                <a href="#" class="logo"><img src="./assets/images/logo/logo.png" alt="img"></a>
+                <br>
+                <a href="#" class="active">API Reference</a>
+                <a href="#">Overview</a>
+                <div class="menu-dropdown active">
+                    <a href="#" class="drop-item">Post APIs</a>
+                    <div class="submnu-list">
+                        <ol>
+                            <li><a href="#"><span>Post</span> Get Token</a></li>
+                            <li><a href="#"><span>Post</span> Send SMS</a></li>
+                            <li><a href="#"><span>Post</span> Get Balance</a></li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="menu-dropdown">
+                    <a href="#" class="drop-item">Projects APIs</a>
+                    <div class="submnu-list">
+                        <ol>
+                            <li><a href="#"><span>Projects</span> Get Token</a></li>
+                            <li><a href="#"><span>Projects</span> Send SMS</a></li>
+                            <li><a href="#"><span>Projects</span> Get Balance</a></li>
+                        </ol>
+                    </div>
+                </div>
+                <ul class="side-menu-list">
+                    <li><a href="#"><span><img src="./assets/images/icons/doc.svg" alt="icon"></span>Documentation</a></li>
+                    <li><a href="#"><span><img src="./assets/images/icons/api-ref.svg" alt=""></span>API Reference</a></li>
+                    <li><a href="#"><span><img src="./assets/images/icons/support.svg" alt=""></span>Support</a></li>
+                </ul>
+            </div>
+            <div class="login-register-btns">
+                <a href="#" class="sign-up-btn">Sign Up</a>
+                <a href="#" class="login-btn">Log in</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="sarch-popup" style="display: none;">
+        <div class="search-popup-inner">
+            <form action="#">
+                <button><img src="./assets/images/icons/search.svg" alt="icon"></button>
+                <input type="text" placeholder="Search or ask...">
+            </form>
+        </div>
+    </div>
+    <div class="api-body-content">
+        <div class="api-content">
+            <div class="api-left api-sidebar">
+                <div class="api-left-inner">
+                    <div class="sidemenu">
+                        <a href="#" class="active">API Reference</a>
+                        <a href="#">Overview</a>
+                        <div class="menu-dropdown active">
+                            <a href="#" class="drop-item">Post APIs</a>
+                            <div class="submnu-list">
+                                <ol>
+                                    <li><a href="#"><span>Post</span> Get Token</a></li>
+                                    <li><a href="#"><span>Post</span> Send SMS</a></li>
+                                    <li><a href="#"><span>Post</span> Get Balance</a></li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="menu-dropdown">
+                            <a href="#" class="drop-item">Projects APIs</a>
+                            <div class="submnu-list">
+                                <ol>
+                                    <li><a href="#"><span>Projects</span> Get Token</a></li>
+                                    <li><a href="#"><span>Projects</span> Send SMS</a></li>
+                                    <li><a href="#"><span>Projects</span> Get Balance</a></li>
+                                </ol>
+                            </div>
+                        </div>
+                        <ul class="side-menu-list">
+                            <li><a href="#"><span><img src="./assets/images/icons/doc.svg" alt="icon"></span>Documentation</a></li>
+                            <li><a href="#"><span><img src="./assets/images/icons/api-ref.svg" alt=""></span>API Reference</a></li>
+                            <li><a href="#"><span><img src="./assets/images/icons/support.svg" alt=""></span>Support</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="api-right api-right-content">
+                <div class="api-right-inner">
+                    <div class="api-container">
+                        <div class="api-container-left">
+                            <h2><span>POST</span> Send SMS</h2>
+                            <div class="api-url">
+                                <span class="url-text">https://maxstore.co.il/api/get-token</span>
+                                <span class="copy-icon" onclick="copyToClipboard()">
+                                    <img src="./assets/images/icons/copy-icon.svg" alt="">
+                                </span>
+                                <span class="copied-text"
+                                    style="display: none; color: green; font-weight: bold;">Copied!</span>
+                            </div>
+                            <p>In order to send SMS to a phone number, you will need to use /send-sms
+                                API along with secret_key, phonenumber and message fields. These fields
+                                are required fields. Also from field is an optional field.</p>
+                            <p>Please make sure to send the token you have received from /get-token API
+                                as Authorization Bearer Token in API request headers.</p>
+                            <div class="detail-for-desktop">
+                                <div class="api-detail">
+                                    <div class="detail-title">
+                                        <h3>AUTHORIZATION</h3>
+                                        <span>Bearer Token</span>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <div class="left">Token</div>
+                                            <div class="right">&lt;token&gt;</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="api-detail">
+                                    <div class="detail-title">
+                                        <h3>HEADERS</h3>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <div class="left">Accept</div>
+                                            <div class="right">application/json</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="api-detail">
+                                    <div class="detail-title">
+                                        <h3>BODY</h3>
+                                        <span>urlencoded</span>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <div class="left">api_secret</div>
+                                            <div class="right">pbahmifqnpjxd6h <span>required</span></div>
+                                        </li>
+                                        <li>
+                                            <div class="left">phonenumber</div>
+                                            <div class="right">0525309310 <span>required</span></div>
+                                        </li>
+                                        <li>
+                                            <div class="left">phonenumber</div>
+                                            <div class="right">this is my test message <span>required</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="left">from</div>
+                                            <div class="right">test user <span>required</span></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="api-detail">
+                                    <div class="detail-title">
+                                        <h4><img src="./assets/images/icons/clock.svg" alt="icon"> Updated
+                                            11 months ago</h4>
+                                    </div>
+                                    <div class="detail-bottom-btns">
+                                        <a href="#"><img src="./assets/images/icons/left-arrow.svg" alt="icon"> Get
+                                            Token</a>
+                                        <a href="#">Get Token <img src="./assets/images/icons/right-arrow.svg" alt="icon">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="api-container-right">
+                            <div class="code-block-card">
+                                <div class="code-box" data-group="languages">
+                                    <div class="tab-bar">
+                                        <span class="tab active" data-tab="curl" data-group="languages">cURL</span>
+                                        <span class="tab" data-tab="python" data-group="languages">Python</span>
+                                        <span class="tab" data-tab="javascript" data-group="languages">JavaScript</span>
+                                        <span class="tab" data-tab="go" data-group="languages">Go</span>
+                                        <span class="tab" data-tab="php" data-group="languages">PHP</span>
+                                    </div>
+                                    <div class="code-content" id="curl" data-group="languages">
+<pre><code class="language-bash">
+<span class="command">curl</span> <span class="option">--location</span> <span class="string">'https://maxstore.co.il/api/send-sms'</span> \
+<span class="option">--header</span> <span class="string">'Accept: application/json'</span> \
+<span class="option">--data-urlencode</span> <span class="string">'api_secret=pbahmifqnpjxd6h'</span> \
+<span class="option">--data-urlencode</span> <span class="string">'phonenumber=0525309310'</span> \
+<span class="option">--data-urlencode</span> <span class="string">'message=this is my test message'</span> \
+<span class="option">--data-urlencode</span> <span class="string">'from=test user'</span>
+</code></pre>
+                                        <div class="copy-container">
+                                            <span class="copy-icon"><img src="./assets/images/icons/copy-2.svg"
+                                                    alt=""></span>
+                                            <span class="check-icon hidden"><img src="./assets/images/icons/check.svg"
+                                                    alt=""></span>
+                                        </div>
+                                    </div>
+                                    <div class="code-content hidden" id="python" data-group="languages">
+<pre><code class="language-python">
+    <span class="keyword">import</span> <span class="variable">requests</span>
+    
+    <span class="variable">url</span> = <span class="string">"https://maxstore.co.il/api/send-sms"</span>
+    <span class="variable">payload</span> = {
+        <span class="string">"api_secret"</span>: <span class="string">"pbahmifqnpjxd6h"</span>,
+        <span class="string">"phonenumber"</span>: <span class="string">"0525309310"</span>,
+        <span class="string">"message"</span>: <span class="string">"this is my test message"</span>,
+        <span class="string">"from"</span>: <span class="string">"test user"</span>
+    }
+    <span class="variable">headers</span> = {
+        <span class="string">"Accept"</span>: <span class="string">"application/json"</span>
+    }
+    
+    <span class="variable">response</span> = <span class="variable">requests</span>.<span class="method">post</span>(
+        <span class="variable">url</span>, 
+        <span class="parameter">data</span>=<span class="variable">payload</span>, 
+        <span class="parameter">headers</span>=<span class="variable">headers</span>
+    )
+    <span class="function">print</span>(<span class="variable">response</span>.<span class="property">text</span>)
+    </code></pre>
+                                        <div class="copy-container">
+                                            <span class="copy-icon"><img src="./assets/images/icons/copy-2.svg"
+                                                    alt=""></span>
+                                            <span class="check-icon hidden"><img src="./assets/images/icons/check.svg"
+                                                    alt=""></span>
+                                        </div>
+                                    </div>
+                                    <div class="code-content hidden" id="javascript" data-group="languages">
+<pre><code class="language-javascript">
+    <span class="keyword">const</span> <span class="variable">fetch</span> = <span class="function">require</span>(<span class="string">"node-fetch"</span>);
+    
+    <span class="keyword">const</span> <span class="variable">url</span> = <span class="string">"https://maxstore.co.il/api/send-sms"</span>;
+    <span class="keyword">const</span> <span class="variable">options</span> = {
+        <span class="property">method</span>: <span class="string">"POST"</span>,
+        <span class="property">headers</span>: { <span class="string">"Accept"</span>: <span class="string">"application/json"</span> },
+        <span class="property">body</span>: <span class="class-name">new</span> <span class="class-name">URLSearchParams</span>({
+            <span class="property">api_secret</span>: <span class="string">"pbahmifqnpjxd6h"</span>,
+            <span class="property">phonenumber</span>: <span class="string">"0525309310"</span>,
+            <span class="property">message</span>: <span class="string">"this is my test message"</span>,
+            <span class="property">from</span>: <span class="string">"test user"</span>
+        }),
+    };
+    
+    <span class="variable">fetch</span>(<span class="variable">url</span>, <span class="variable">options</span>)
+        .<span class="method">then</span>(<span class="parameter">response</span> => <span class="parameter">response</span>.<span class="method">text</span>())
+        .<span class="method">then</span>(<span class="parameter">console</span>.<span class="method">log</span>)
+        .<span class="method">catch</span>(<span class="parameter">console</span>.<span class="method">error</span>);
+</code></pre>
+                                        <div class="copy-container">
+                                            <span class="copy-icon"><img src="./assets/images/icons/copy-2.svg"
+                                                    alt=""></span>
+                                            <span class="check-icon hidden"><img src="./assets/images/icons/check.svg"
+                                                    alt=""></span>
+                                        </div>
+                                    </div>
+                                    <div class="code-content hidden" id="go" data-group="languages">
+<pre><code class="language-go">
+    <span class="keyword">package</span> <span class="variable">main</span>
+    
+    <span class="keyword">import</span> (
+        <span class="string">"fmt"</span>
+        <span class="string">"net/http"</span>
+        <span class="string">"net/url"</span>
+        <span class="string">"strings"</span>
+    )
+    
+    <span class="keyword">func</span> <span class="function">main</span>() {
+        <span class="variable">endpoint</span> := <span class="string">"https://maxstore.co.il/api/send-sms"</span>
+        <span class="variable">data</span> := <span class="class-name">url.Values</span>{
+            <span class="string">"api_secret"</span>:   {<span class="string">"pbahmifqnpjxd6h"</span>},
+            <span class="string">"phonenumber"</span>:  {<span class="string">"0525309310"</span>},
+            <span class="string">"message"</span>:      {<span class="string">"this is my test message"</span>},
+            <span class="string">"from"</span>:         {<span class="string">"test user"</span>},
+        }
+    
+        <span class="variable">resp</span>, <span class="variable">err</span> := <span class="class-name">http.PostForm</span>(<span class="variable">endpoint</span>, <span class="variable">data</span>)
+        <span class="keyword">if</span> <span class="variable">err</span> != <span class="literal">nil</span> {
+            <span class="class-name">fmt.Println</span>(<span class="string">"Error:"</span>, <span class="variable">err</span>)
+            <span class="keyword">return</span>
+        }
+        <span class="class-name">defer</span> <span class="variable">resp.Body.Close</span>()
+        <span class="class-name">fmt.Println</span>(<span class="string">"Response Status:"</span>, <span class="variable">resp.Status</span>)
+    }
+</code></pre>
+                                        <div class="copy-container">
+                                            <span class="copy-icon"><img src="./assets/images/icons/copy-2.svg"
+                                                    alt=""></span>
+                                            <span class="check-icon hidden"><img src="./assets/images/icons/check.svg"
+                                                    alt=""></span>
+                                        </div>
+                                    </div>
+                                    <div class="code-content hidden" id="php" data-group="languages">
+<pre><code class="language-php">
+    <span class="tag">&lt;?php</span>
+    <span class="variable">$curl</span> = <span class="class-name">curl_init</span>();
+    
+    <span class="class-name">curl_setopt_array</span>(<span class="variable">$curl</span>, <span class="keyword">array</span>(
+        <span class="variable">CURLOPT_URL</span> => <span class="string">"https://maxstore.co.il/api/send-sms"</span>,
+        <span class="variable">CURLOPT_RETURNTRANSFER</span> => <span class="literal">true</span>,
+        <span class="variable">CURLOPT_POST</span> => <span class="literal">true</span>,
+        <span class="variable">CURLOPT_POSTFIELDS</span> => <span class="class-name">http_build_query</span>(<span class="keyword">array</span>(
+            <span class="string">"api_secret"</span> => <span class="string">"pbahmifqnpjxd6h"</span>,
+            <span class="string">"phonenumber"</span> => <span class="string">"0525309310"</span>,
+            <span class="string">"message"</span> => <span class="string">"this is my test message"</span>,
+            <span class="string">"from"</span> => <span class="string">"test user"</span>
+        )),
+        <span class="variable">CURLOPT_HTTPHEADER</span> => <span class="keyword">array</span>(<span class="string">"Accept: application/json"</span>)
+    ));
+    
+    <span class="variable">$response</span> = <span class="class-name">curl_exec</span>(<span class="variable">$curl</span>);
+    <span class="class-name">curl_close</span>(<span class="variable">$curl</span>);
+    <span class="class-name">echo</span> <span class="variable">$response</span>;
+    <span class="tag">?&gt;</span>
+</code></pre>
+                                        <div class="copy-container">
+                                            <span class="copy-icon"><img src="./assets/images/icons/copy-2.svg"
+                                                    alt="icon"></span>
+                                            <span class="check-icon hidden"><img src="./assets/images/icons/check.svg"
+                                                    alt="icon"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="code-box" data-group="responses">
+                                    <div class="tab-bar">
+                                        <span class="tab active" data-tab="code200" data-group="responses">200</span>
+                                        <span class="tab" data-tab="code400" data-group="responses">400</span>
+                                    </div>
+                                    <div class="code-content" id="code200" data-group="responses">
+<pre>
+<code>
+[
+    {
+        <span class="keyword">"id"</span>: <span class="string">"&lt;string&gt;"</span>,
+        <span class="keyword">"data"</span>: {
+            <span class="keyword">"memory"</span>: <span class="string">"&lt;string&gt;"</span>
+        },
+        <span class="keyword">"event"</span>: <span class="string">"ADD"</span>
+    }
+]
+</code>
+</pre>
+                                        <div class="copy-container">
+                                            <span class="copy-icon"><img src="./assets/images/icons/copy-2.svg"
+                                                    alt=""></span>
+                                            <span class="check-icon hidden"><img src="./assets/images/icons/check.svg"
+                                                    alt=""></span>
+                                        </div>
+                                    </div>
+                                    <div class="code-content hidden" id="code400" data-group="responses">
+<pre>
+<code>
+[
+    {
+        <span class="keyword">"id"</span>: <span class="string">"&lt;var&gt;"</span>,
+        <span class="keyword">"data"</span>: {
+            <span class="keyword">"memory"</span>: <span class="string">"&lt;var&gt;"</span>
+        },
+        <span class="keyword">"event"</span>: <span class="string">"Remove"</span>
+    }
+]
+</code>
+</pre>
+                                        <div class="copy-container">
+                                            <span class="copy-icon"><img src="./assets/images/icons/copy-2.svg"
+                                                    alt=""></span>
+                                            <span class="check-icon hidden"><img src="./assets/images/icons/check.svg"
+                                                    alt=""></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="detail-for-mobile">
+                            <div class="api-detail">
+                                <div class="detail-title">
+                                    <h3>AUTHORIZATION</h3>
+                                    <span>Bearer Token</span>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <div class="left">Token</div>
+                                        <div class="right">&lt;token&gt;</div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="api-detail">
+                                <div class="detail-title">
+                                    <h3>HEADERS</h3>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <div class="left">Accept</div>
+                                        <div class="right">application/json</div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="api-detail">
+                                <div class="detail-title">
+                                    <h3>BODY</h3>
+                                    <span>urlencoded</span>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <div class="left">api_secret</div>
+                                        <div class="right">pbahmifqnpjxd6h <span>required</span></div>
+                                    </li>
+                                    <li>
+                                        <div class="left">phonenumber</div>
+                                        <div class="right">0525309310 <span>required</span></div>
+                                    </li>
+                                    <li>
+                                        <div class="left">phonenumber</div>
+                                        <div class="right">this is my test message <span>required</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="left">from</div>
+                                        <div class="right">test user <span>required</span></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="api-detail">
+                                <div class="detail-title">
+                                    <h4><img src="./assets/images/icons/clock.svg" alt="icon"> Updated
+                                        11 months ago</h4>
+                                </div>
+                                <div class="detail-bottom-btns">
+                                    <a href="#"><img src="./assets/images/icons/left-arrow.svg" alt="icon"> Get
+                                        Token</a>
+                                    <a href="#">Get Token <img src="./assets/images/icons/right-arrow.svg" alt="icon">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/jquery.min.js"></script>
+
+    <!-- for api code block -->
+    <script>
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', function () {
+                const group = this.dataset.group;
+                const targetTab = this.dataset.tab;
+
+                // Deactivate all tabs and contents in the same group
+                document.querySelectorAll(`.tab[data-group="${group}"]`).forEach(t => t.classList.remove('active'));
+                document.querySelectorAll(`.code-content[data-group="${group}"]`).forEach(content => content.classList.add('hidden'));
+
+                // Activate the selected tab and content
+                this.classList.add('active');
+                document.getElementById(targetTab).classList.remove('hidden');
+            });
+        });
+        document.querySelectorAll('.copy-icon').forEach(copyButton => {
+            copyButton.addEventListener('click', () => {
+                // Get the code block text
+                const code = copyButton.closest('.code-content').querySelector('pre code').innerText.trim();
+                
+                // Copy text to clipboard
+                navigator.clipboard.writeText(code).then(() => {
+                    // Hide the copy icon
+                    copyButton.classList.add('hidden');
+                    
+                    // Show success message
+                    const successMessage = copyButton.nextElementSibling;
+                    successMessage.classList.remove('hidden');
+                    
+                    // After 2 seconds, revert the changes
+                    setTimeout(() => {
+                        successMessage.classList.add('hidden');
+                        copyButton.classList.remove('hidden');
+                    }, 2000);
+                });
+            });
+        });
+
+    </script>
+
+    <!-- for api url copy -->
+     <script>
+        function copyToClipboard() {
+            const urlText = document.querySelector('.url-text').textContent;
+            navigator.clipboard.writeText(urlText).then(() => {
+                const copyIcon = document.querySelector('.copy-icon img');
+                const copiedText = document.querySelector('.copied-text');
+
+                // Hide the copy icon and show the copied text
+                copyIcon.style.display = 'none';
+                copiedText.style.display = 'inline';
+
+                // Show the copy icon again after 3 seconds
+                setTimeout(() => {
+                    copyIcon.style.display = 'inline';
+                    copiedText.style.display = 'none';
+                }, 3000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        }
+     </script>
+
+
+<script>
+    // Function to toggle 'active' class on dropdown click and close on outside click
+    document.querySelectorAll('.menu-dropdown .drop-item').forEach(dropItem => {
+        dropItem.addEventListener('click', function(event) {
+            // Prevent default link behavior and stop propagation to document
+            event.preventDefault();
+            event.stopPropagation();
+
+            // Get the closest menu-dropdown element
+            const menuDropdown = this.closest('.menu-dropdown');
+
+            // Toggle 'active' class
+            const isActive = menuDropdown.classList.contains('active');
+            document.querySelectorAll('.menu-dropdown.active').forEach(dropdown => {
+                dropdown.classList.remove('active');
+            });
+            if (!isActive) {
+                menuDropdown.classList.add('active');
+            }
+        });
+    });
+
+    // Close all active dropdowns when clicking outside
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.menu-dropdown.active').forEach(dropdown => {
+            dropdown.classList.remove('active');
+        });
+    });
+</script>
+
+<!-- search popup-js -->
+<script>
+    $(document).ready(function () {
+        // Show the popup
+        $(".show-search-popup").click(function () {
+            $(".sarch-popup").fadeIn(); // Fade in effect for the popup
+        });
+
+        // Hide the popup when clicking outside of the search-popup-inner
+        $(document).mouseup(function (e) {
+            const popupInner = $(".search-popup-inner");
+            if (!popupInner.is(e.target) && popupInner.has(e.target).length === 0) {
+                $(".sarch-popup").fadeOut(); // Fade out effect for the popup
+            }
+        });
+
+        // Hide the popup when the Escape key is pressed
+        $(document).on("keydown", function (e) {
+            if (e.key === "Escape" || e.keyCode === 27) { // Check for Escape key
+                $(".sarch-popup").fadeOut(); // Fade out effect for the popup
+            }
+        });
+    });
+</script>
+
+<!-- mobile menu js -->
+ <script>
+        // Select necessary elements
+    const menuButton = document.querySelector('.mobile-menu-btn');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const closeButton = document.querySelector('.menu-close');
+    const mobileMenuInner = document.querySelector('.mobile-menu-inner');
+
+    // Function to close the mobile menu
+    const closeMenu = () => {
+        mobileMenu.classList.remove('active');
+    };
+
+    // Open the mobile menu on menu button click
+    menuButton.addEventListener('click', () => {
+        mobileMenu.classList.add('active');
+    });
+
+    // Close the mobile menu on close button click
+    closeButton.addEventListener('click', closeMenu);
+
+    // Close the mobile menu when clicking outside the mobile-menu-inner
+    mobileMenu.addEventListener('click', (event) => {
+        if (!mobileMenuInner.contains(event.target)) {
+            closeMenu();
+        }
+    });
+
+    // Close the mobile menu on pressing the Escape key
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            closeMenu();
+        }
+    });
+ </script>
+
+</body>
+
+</html>
