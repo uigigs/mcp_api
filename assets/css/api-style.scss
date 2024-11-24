@@ -516,25 +516,24 @@ body {
             }
         }
     }
+}
+.detail-bottom-btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 0px;
 
-    .detail-bottom-btns {
+    a {
+        color: #444;
+        font-family: Inter;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 200%;
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        padding: 25px 0px;
-
-        a {
-            color: #444;
-            font-family: Inter;
-            font-size: 15px;
-            font-style: normal;
-            font-weight: 600;
-            line-height: 200%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 17px;
-        }
+        justify-content: center;
+        gap: 17px;
     }
 }
 
@@ -858,6 +857,15 @@ pre {
 
     }
 }
+
+
+/* ovrview css*/
+.overview-content{
+    p{
+        margin-bottom: 15px;
+    }
+}
+
 
 @media screen and (max-width: 1200px) {
     .detail-for-desktop{

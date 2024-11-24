@@ -483,13 +483,14 @@ body ::-webkit-scrollbar-thumb {
   background: rgba(249, 66, 66, 0.2);
   margin-top: 6px;
 }
-.api-detail .detail-bottom-btns {
+
+.detail-bottom-btns {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 25px 0px;
 }
-.api-detail .detail-bottom-btns a {
+.detail-bottom-btns a {
   color: #444;
   font-family: Inter;
   font-size: 15px;
@@ -817,6 +818,11 @@ pre {
   border: 1px solid rgba(0, 0, 0, 0.15);
   background: #FFF;
   color: #000;
+}
+
+/* ovrview css*/
+.overview-content p {
+  margin-bottom: 15px;
 }
 
 @media screen and (max-width: 1200px) {
