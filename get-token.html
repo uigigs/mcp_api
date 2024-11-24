@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MCP API Reference - Overview</title>
+    <title>MCP API Reference  - Get Token</title>
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/api-style.css">
 </head>
@@ -45,14 +45,14 @@
                 <a href="#" class="logo"><img src="./assets/images/logo/logo.png" alt="img"></a>
                 <br>
                 <a href="#" class="active">API Reference</a>
-                <a href="./overview.html" class="active">Overview</a>
+                <a href="./overview.html">Overview</a>
                 <div class="menu-dropdown active">
                     <a href="#" class="drop-item">Post APIs</a>
                     <div class="submnu-list">
                         <ol>
-                            <li><a href="./get-token.html"><span>Post</span> Get Token</a></li>
-                            <li><a href="./send-sms.html"><span>Post</span> Send SMS</a></li>
-                            <li><a href="./get-balance.html"><span>Post</span> Get Balance</a></li>
+                            <li><a href="#"><span>Post</span> Get Token</a></li>
+                            <li><a href="#" class="active"><span>Post</span> Send SMS</a></li>
+                            <li><a href="#"><span>Post</span> Get Balance</a></li>
                         </ol>
                     </div>
                 </div>
@@ -60,7 +60,7 @@
                     <a href="#" class="drop-item">Projects APIs</a>
                     <div class="submnu-list">
                         <ol>
-                            <li><a href="./get-token.html"><span>Post</span> Get Token</a></li>
+                            <li><a href="./get-token.html" class="active"><span>Post</span> Get Token</a></li>
                             <li><a href="./send-sms.html"><span>Post</span> Send SMS</a></li>
                             <li><a href="./get-balance.html"><span>Post</span> Get Balance</a></li>
                         </ol>
@@ -93,12 +93,12 @@
                 <div class="api-left-inner">
                     <div class="sidemenu">
                         <a href="#" class="active">API Reference</a>
-                        <a href="./overview.html" class="active">Overview</a>
-                        <div class="menu-dropdown">
+                        <a href="./overview.html">Overview</a>
+                        <div class="menu-dropdown active">
                             <a href="#" class="drop-item">Post APIs</a>
                             <div class="submnu-list">
                                 <ol>
-                                    <li><a href="./get-token.html"><span>Post</span> Get Token</a></li>
+                                    <li><a href="./get-token.html" class="active"><span>Post</span> Get Token</a></li>
                                     <li><a href="./send-sms.html"><span>Post</span> Send SMS</a></li>
                                     <li><a href="./get-balance.html"><span>Post</span> Get Balance</a></li>
                                 </ol>
@@ -108,9 +108,9 @@
                             <a href="#" class="drop-item">Projects APIs</a>
                             <div class="submnu-list">
                                 <ol>
-                                    <li><a href="./get-token.html"><span>Post</span> Get Token</a></li>
-                                    <li><a href="./send-sms.html"><span>Post</span> Send SMS</a></li>
-                                    <li><a href="./get-balance.html"><span>Post</span> Get Balance</a></li>
+                                    <li><a href="#" class="active"><span>Projects</span> Get Token</a></li>
+                                    <li><a href="#"><span>Projects</span> Send SMS</a></li>
+                                    <li><a href="#"><span>Projects</span> Get Balance</a></li>
                                 </ol>
                             </div>
                         </div>
@@ -125,49 +125,139 @@
             <div class="api-right api-right-content">
                 <div class="api-right-inner">
                     <div class="api-container">
-                        <div class="api-container-left overview-content">
-                            <h2>MCP</h2>
-                            <p>This document explains about how to use our APIs. In order to use our APIs you need to use an HTTP post/get request by sending required parameters as per API requested. The response will also be
-                                sent in an JSON Format.</p>
-                            <p>All requests must be sent to <a href="https://maxstore.co.il/api">https://maxstore.co.il/api</a></p>
-                            <p>Before start using our API, make sure you have valid API credentials (api_key and api_secret). If you do not have these then contact us at <a href="mailto:support@maxstore.com.">support@maxstore.com.</a></p>
-                            <p>Every request sent to our server will be validated with a valid token which you can get from our /get-token API described below.</p>
-                            <p>If you are sending a post request then all post data must be sent as x-www-form-urlencoded.</p>
-                            <p>A response will be provided for every request you sent. Please see examples below for success and error responses.</p>
-                            <p>Success Reponse:</p>
-                            <p>
-                                { <br>
-
-                                    "success": true,<br>
-                                    
-                                    "data": { },<br>
-                                    
-                                    "message": "Your request is successful",<br>
-                                    
-                                    "responseType": "Success"<br>
-                                    
-                                    }<br>
-                                    
-                                    Error Response:<br>
-                                    
-                                    {<br>
-                                    
-                                    "success": false,<br>
-                                    
-                                    "data": { },<br>
-                                    
-                                    "message": "Your request was unsuccessful",<br>
-                                    
-                                    "responseType": "Invalid Data",<br>
-                                    
-                                    "errorCode": 500<br>
-                                    
-                                    }
-                            </p>
-                            <p>You will get "success: true" for successful request else false will be returned.</p>
+                        <div class="api-container-left">
+                            <h2><span>POST</span> Get Token</h2>
+                            <div class="api-url">
+                                <span class="url-text">https://maxstore.co.il/api/get-token</span>
+                                <span class="copy-icon" onclick="copyToClipboard()">
+                                    <img src="./assets/images/icons/copy-icon.svg" alt="">
+                                </span>
+                                <span class="copied-text"
+                                    style="display: none; color: green; font-weight: bold;">Copied!</span>
+                            </div>
+                            <p>In order to get API Token you will need to send a request to /get-token with your credentials (api_key and api_secret). You can access your API Secret Key by logging into your account.</p>
                             
-                            <div class="detail-bottom-btns">
-                                <a href="./get-token.html">Get Token <img src="./assets/images/icons/right-arrow.svg" alt="icon"></a>
+                            <div class="detail-for-desktop">
+                                <div class="api-detail">
+                                    <div class="detail-title">
+                                        <h3>Body</h3>
+                                        <span>urlencoded</span>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <div class="left">api_key</div>
+                                            <div class="right">egf748ccdr43h3a <span>required</span></div>
+                                        </li>
+                                        <li>
+                                            <div class="left">api_secret</div>
+                                            <div class="right">elwjyji7hirmauo <span>required</span></div>
+                                        </li>
+                                    </ul>
+                                    <div class="detail-bottom-btns">
+                                        <a href="./get-balance.html"><img src="./assets/images/icons/left-arrow.svg" alt="icon"> Get
+                                            Balance</a>
+                                        <a href="./send-sms.html">Send SMS <img src="./assets/images/icons/right-arrow.svg" alt="icon">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="api-container-right">
+                            <div class="code-block-card">
+                                <div class="code-box" data-group="languages">
+                                    <div class="tab-bar">
+                                        <span class="tab active" data-tab="curl" data-group="languages">cURL</span>
+                                        <span class="tab" data-tab="python" data-group="languages">Python</span>
+                                        <span class="tab" data-tab="javascript" data-group="languages">JavaScript</span>
+                                        <span class="tab" data-tab="go" data-group="languages">Go</span>
+                                        <span class="tab" data-tab="php" data-group="languages">PHP</span>
+                                    </div>
+                                    <div class="code-content" id="curl" data-group="languages">
+<pre><code class="language-bash"><span class="command">curl</span> <span class="option">--location</span> <span class="string">'https://maxstore.co.il/api/get-token'</span> \
+<span class="option">--data-urlencode</span> <span class="string">'api_key=egf748ccdr43h3a'</span> \
+<span class="option">--data-urlencode</span> <span class="string">'api_secret=elwjyji7hirmauo'</span> \</code></pre>
+                                        <div class="copy-container">
+                                            <span class="copy-icon"><img src="./assets/images/icons/copy-2.svg" alt="icon"></span>
+                                            <span class="check-icon hidden"><img src="./assets/images/icons/check.svg" alt="icon"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="code-content hidden" id="python" data-group="languages">
+<pre><code class="language-python"></code></pre>
+                                        <div class="copy-container">
+                                            <span class="copy-icon"><img src="./assets/images/icons/copy-2.svg" alt="icon"></span>
+                                            <span class="check-icon hidden"><img src="./assets/images/icons/check.svg"  alt="icon"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="code-content hidden" id="javascript" data-group="languages">
+                                        <pre><code class="language-javascript"></code></pre>
+                                        <div class="copy-container">
+                                            <span class="copy-icon"><img src="./assets/images/icons/copy-2.svg" alt="icon"></span>
+                                            <span class="check-icon hidden"><img src="./assets/images/icons/check.svg"  alt="icon"></span>
+                                        </div>
+                                    </div>
+                                    <div class="code-content hidden" id="go" data-group="languages">
+<pre><code class="language-go"></code></pre>
+                                    <div class="copy-container">
+                                        <span class="copy-icon"><img src="./assets/images/icons/copy-2.svg" alt="icon"></span>
+                                        <span class="check-icon hidden"><img src="./assets/images/icons/check.svg"  alt="icon"></span>
+                                    </div>
+                                    </div>
+                                    <div class="code-content hidden" id="php" data-group="languages">
+<pre><code class="language-php"></code></pre>
+                                    <div class="copy-container">
+                                        <span class="copy-icon"><img src="./assets/images/icons/copy-2.svg" alt="icon"></span>
+                                        <span class="check-icon hidden"><img src="./assets/images/icons/check.svg"  alt="icon"></span>
+                                    </div>
+                                    </div>
+                                </div>
+
+                                <div class="code-box" data-group="responses">
+                                    <div class="tab-bar">
+                                        <span class="tab active" data-tab="code200" data-group="responses">200</span>
+                                        <span class="tab" data-tab="code400" data-group="responses">400</span>
+                                    </div>
+                                    <div class="code-content" id="code200" data-group="responses">
+<pre><code></code></pre>
+                                    <div class="copy-container">
+                                        <span class="copy-icon"><img src="./assets/images/icons/copy-2.svg" alt="icon"></span>
+                                        <span class="check-icon hidden"><img src="./assets/images/icons/check.svg"  alt="icon"></span>
+                                    </div>
+                                    </div>
+                                    <div class="code-content hidden" id="code400" data-group="responses">
+<pre><code></code></pre>
+                                    <div class="copy-container">
+                                        <span class="copy-icon"><img src="./assets/images/icons/copy-2.svg" alt="icon"></span>
+                                        <span class="check-icon hidden"><img src="./assets/images/icons/check.svg"  alt="icon"></span>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="detail-for-mobile">
+                            <div class="api-detail">
+                                <div class="detail-title">
+                                    <h3>Body</h3>
+                                    <span>urlencoded</span>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <div class="left">api_key</div>
+                                        <div class="right">egf748ccdr43h3a <span>required</span></div>
+                                    </li>
+                                    <li>
+                                        <div class="left">api_secret</div>
+                                        <div class="right">elwjyji7hirmauo <span>required</span></div>
+                                    </li>
+                                </ul>
+                                <div class="detail-bottom-btns">
+                                    <a href="./get-balance.html"><img src="./assets/images/icons/left-arrow.svg" alt="icon"> Get
+                                        Balance</a>
+                                    <a href="./send-sms.html">Send SMS <img src="./assets/images/icons/right-arrow.svg" alt="icon">
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -242,6 +332,7 @@
             });
         }
      </script>
+
 
 <!-- dropdown js -->
 <script>

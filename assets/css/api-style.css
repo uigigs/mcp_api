@@ -170,13 +170,13 @@ body ::-webkit-scrollbar-thumb {
 .sidemenu .side-menu-list li span img {
   transition: 0.3s;
 }
-.sidemenu .side-menu-list li:hover span {
+.sidemenu .side-menu-list li:hover span, .sidemenu .side-menu-list li.active span {
   background: #35B7F3;
 }
-.sidemenu .side-menu-list li:hover span img {
+.sidemenu .side-menu-list li:hover span img, .sidemenu .side-menu-list li.active span img {
   filter: brightness(100);
 }
-.sidemenu .side-menu-list li:hover a {
+.sidemenu .side-menu-list li:hover a, .sidemenu .side-menu-list li.active a {
   transition: 0.3s;
   color: #35B7F3;
 }
@@ -612,7 +612,7 @@ pre {
 
 .code-content code {
   display: block;
-  background: #0F1117;
+  background: #0F1117 !important;
   padding: 0;
   color: rgba(255, 255, 255, 0.5);
   font-family: "JetBrains Mono";
@@ -624,6 +624,14 @@ pre {
   text-shadow: none;
   position: relative;
   z-index: 0;
+}
+
+.language-bash {
+  background: transparent !important;
+}
+
+.code-box {
+  background: #0F1117 !important;
 }
 
 /* Highlight specific elements */

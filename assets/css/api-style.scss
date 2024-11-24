@@ -187,7 +187,8 @@ body {
                     transition: 0.3s;
                 }
             }
-            &:hover{
+            &:hover, 
+            &.active{
                 span{
                     background: #35B7F3;
                     img{
@@ -644,7 +645,7 @@ pre {
 
 .code-content code {
     display: block;
-    background: #0F1117;
+    background: #0F1117 !important;
     padding: 0;
     color: rgba(255, 255, 255, 0.50);
     font-family: "JetBrains Mono";
@@ -658,6 +659,13 @@ pre {
     position: relative;
     z-index: 0;
 }
+.language-bash{
+    background: transparent !important;
+}
+.code-box{
+    background: #0F1117 !important;
+}
+
 
 /* Highlight specific elements */
 .language-bash .command {
